@@ -1,0 +1,70 @@
+#check for unfilled
+
+BYZ = {
+	color = rgb { 147 82 173 }
+	color_ui = rgb { 167 102 193 }
+}
+URN = {
+	color = rgb { 63 178 255 }
+	color_ui = rgb { 63 178 255 }
+}
+FUR = {
+	color = rgb { 255 127 0 }
+	color_ui = rgb { 255 127 0 }
+}
+KSS = {
+	color = rgb { 74 19 8 }
+	color_ui = rgb { 74 19 8 }
+}
+EDG = {
+	color = rgb { 74 19 8 }
+	color_ui = rgb { 74 19 8 }
+}
+MRB = {
+	color = rgb { 17 7 95 }
+	color_ui = rgb { 17 7 95 }
+}
+UCF = {
+	color = rgb { 80 159 90 }
+	color_ui = rgb { 80 159 90 }
+}
+SAR = {
+	color = rgb { 200 0 0 }
+	color_ui = rgb { 200 0 0 }
+}
+PIK = {
+	color = rgb { 45 162 162 }
+	color_ui = rgb { 45 162 162 }
+}
+RMN = {
+	color = rgb { 215 196 72 }
+	color_ui = rgb { 215 196 72 }
+}
+NIN = {
+	color = rgb { 196 77 61 }
+	color_ui = rgb { 196 77 61 }
+}
+LEC = {
+	color = rgb { 74 19 8 }
+	color_ui = rgb { 74 19 8 }
+}
+PRS = {
+	color = rgb { 128 128 128 }
+	color_ui = rgb { 128 128 128 }
+}
+GNP = {
+	color = rgb { 74 19 8 }
+	color_ui = rgb { 74 19 8 }
+}
+IMP = {
+	color = rgb { 204 0 0 }
+	color_ui = rgb { 204 0 0 }
+}
+PES = {
+	color = rgb { 74 19 8 }
+	color_ui = rgb { 74 19 8 }
+}
+RSF = {
+	color = rgb { 74 19 8 }
+	color_ui = rgb { 74 19 8 }
+}

@@ -1,0 +1,1031 @@
+﻿search_filter_prios = {
+	FOCUS_FILTER_POLITICAL = 1010
+	
+	FOCUS_FILTER_RESEARCH = 522
+	
+	FOCUS_FILTER_INDUSTRY = 509
+
+	FOCUS_FILTER_BALANCE_OF_POWER = 200
+	FOCUS_FILTER_SOV_POLITICAL_PARANOIA = 111
+	FOCUS_FILTER_PROPAGANDA = 110
+	FOCUS_FILTER_MISSIOLINI = 110
+	FOCUS_FILTER_ARMY_XP = 103
+	FOCUS_FILTER_NAVY_XP = 102
+	FOCUS_FILTER_AIR_XP = 101
+
+}
+
+focus_tree = {
+	id = generic_focus
+	
+	country = {
+		factor = 1
+	}
+	
+	default = yes
+	reset_on_civilwar = no
+
+	focus = {
+		id = new_economic_reality
+		icon = GFX_focus_generic_industry_1
+		x = 16
+		y = 0
+		cost = 5
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 1.0
+				uses = 2
+				category = industry
+			}
+		}
+	}
+
+	focus = {
+		id = prioritize_the_interior
+		icon = GFX_focus_generic_self_management
+		mutually_exclusive = { focus = limited_economic_cooperation }
+		mutually_exclusive = { focus = free_trade }
+		x = -10
+		y = 1
+		relative_position_id = new_economic_reality
+		prerequisite = { focus = new_economic_reality }
+		cost = 10
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 1.0
+				uses = 2
+				category = industry
+			}
+		}
+	}
+	# mutually_exclusive = { focus = liberty_ethos}
+	focus = {
+		id = long_term_economic_planning
+		icon = GFX_goal_generic_consumer_goods
+		x = -4
+		y = 1
+		relative_position_id = prioritize_the_interior
+		prerequisite = { focus = prioritize_the_interior }
+		cost = 10
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 1.0
+				uses = 2
+				category = industry
+			}
+		}
+	}
+	
+	focus = {
+		id = agricultural_protectionism
+		icon = GFX_focus_generic_agricultural_subsidies
+		x = -2
+		y = 1
+		relative_position_id = long_term_economic_planning
+		prerequisite = { focus = long_term_economic_planning }
+		cost = 10
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 1.0
+				uses = 2
+				category = industry
+			}
+		}
+	}
+	
+	focus = {
+		id = railway_expansion
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 1
+		relative_position_id = agricultural_protectionism
+		prerequisite = { focus = agricultural_protectionism }
+		cost = 10
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 1.0
+				uses = 2
+				category = industry
+			}
+		}
+	}
+	
+	focus = {
+		id = increase_spread_of_electricity
+		icon = GFX_focus_generic_energy
+		x = 0
+		y = 1
+		relative_position_id = railway_expansion
+		prerequisite = { focus = railway_expansion }
+		cost = 10
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 1.0
+				uses = 2
+				category = industry
+			}
+		}
+	}
+
+	focus = {
+		id = achieving_higher_yield
+		icon = GFX_focus_generic_tungsten
+		x = 2
+		y = 1
+		relative_position_id = long_term_economic_planning
+		prerequisite = { focus = long_term_economic_planning }
+		cost = 10
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 1.0
+				uses = 2
+				category = industry
+			}
+		}
+	}
+	
+	focus = {
+		id = university_expansion
+		icon = GFX_focus_research
+		x = 0
+		y = 1
+		relative_position_id = achieving_higher_yield
+		prerequisite = { focus = achieving_higher_yield }
+		cost = 10
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 1.0
+				uses = 2
+				category = industry
+			}
+		}
+	}
+	
+	focus = {
+		id = improve_tools_quality
+		icon = GFX_goal_generic_production
+		x = 0
+		y = 1
+		relative_position_id = university_expansion
+		prerequisite = { focus = university_expansion }
+		cost = 10
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 1.0
+				uses = 2
+				category = industry
+			}
+		}
+	}
+	
+	focus = {
+		id = times_of_prosperity
+		icon = GFX_focus_generic_industry_3
+		x = 2
+		y = 1
+		relative_position_id = increase_spread_of_electricity
+		prerequisite = { focus = increase_spread_of_electricity }
+		prerequisite = { focus = improve_tools_quality }
+		cost = 10
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 1.0
+				uses = 2
+				category = industry
+			}
+		}
+	}
+	
+	focus = {
+		id = rapid_industrialization
+		icon = GFX_goal_generic_forceful_treaty
+		x = 4
+		y = 1
+		relative_position_id = prioritize_the_interior
+		prerequisite = { focus = limited_economic_cooperation focus = prioritize_the_interior }
+		cost = 10
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 1.0
+				uses = 2
+				category = industry
+			}
+		}
+	}
+	
+	focus = {
+		id = construction_and_development_focus
+		icon = GFX_focus_POL_warsaw_main_station
+		x = -2
+		y = 1
+		relative_position_id = rapid_industrialization
+		prerequisite = { focus = rapid_industrialization }
+		cost = 10
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 1.0
+				uses = 2
+				category = industry
+			}
+		}
+	}
+	
+	focus = {
+		id = military_industrial_complex
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 2
+		y = 1
+		relative_position_id = rapid_industrialization
+		prerequisite = { focus = rapid_industrialization }
+		cost = 10
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 1.0
+				uses = 2
+				category = industry
+			}
+		}
+	}
+	
+	focus = {
+		id = mass_employment
+		icon = GFX_focus_generic_full_employment
+		x = 0
+		y = 1
+		relative_position_id = construction_and_development_focus
+		prerequisite = { focus = construction_and_development_focus }
+		cost = 10
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 1.0
+				uses = 2
+				category = industry
+			}
+		}
+	}
+	
+	focus = {
+		id = social_welfare
+		icon = GFX_focus_generic_concessions
+		x = 0
+		y = 1
+		relative_position_id = mass_employment
+		prerequisite = { focus = mass_employment }
+		cost = 10
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 1.0
+				uses = 2
+				category = industry
+			}
+		}
+	}
+	
+	focus = {
+		id = subsidies_program
+		icon = GFX_goal_generic_construct_military
+		x = 0
+		y = 1
+		relative_position_id = military_industrial_complex
+		prerequisite = { focus = military_industrial_complex }
+		cost = 10
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 1.0
+				uses = 2
+				category = industry
+			}
+		}
+	}
+	
+	focus = {
+		id = specialization
+		icon = GFX_focus_generic_tank_production
+		mutually_exclusive = { focus = generalization }
+		x = -1
+		y = 1
+		relative_position_id = subsidies_program
+		prerequisite = { focus = subsidies_program }
+		cost = 10
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 1.0
+				uses = 2
+				category = industry
+			}
+		}
+	}
+	
+	focus = {
+		id = generalization
+		icon = GFX_focus_generic_tankette
+		mutually_exclusive = { focus = specialization }
+		x = 1
+		y = 1
+		relative_position_id = subsidies_program
+		prerequisite = { focus = subsidies_program }
+		cost = 10
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 1.0
+				uses = 2
+				category = industry
+			}
+		}
+	}
+	
+	
+
+	focus = {
+		id = limited_economic_cooperation
+		icon = GFX_goal_generic_trade
+		mutually_exclusive = { focus = prioritize_the_interior }
+		mutually_exclusive = { focus = free_trade }
+		x = 2
+		y = 1
+		relative_position_id = new_economic_reality
+		prerequisite = { focus = new_economic_reality }
+		cost = 10
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 1.0
+				uses = 2
+				category = industry
+			}
+		}
+	}
+	
+	focus = {
+		id = full_protectionism
+		icon = GFX_focus_DEN_limited_regulations
+		x = -2
+		y = 1
+		relative_position_id = limited_economic_cooperation
+		prerequisite = { focus = limited_economic_cooperation focus = prioritize_the_interior focus = free_trade }
+		cost = 10
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 1.0
+				uses = 2
+				category = industry
+			}
+		}
+	}
+	
+	focus = {
+		id = tariffs_through_rooftop
+		icon = GFX_goal_generic_demand_territory
+		x = 0
+		y = 1
+		relative_position_id = full_protectionism
+		prerequisite = { focus = full_protectionism }
+		cost = 10
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 1.0
+				uses = 2
+				category = industry
+			}
+		}
+	}
+	
+	focus = {
+		id = adopt_the_kopenhagen_mark
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		mutually_exclusive = { focus = new_national_currency }
+		x = -1
+		y = 1
+		relative_position_id = tariffs_through_rooftop
+		prerequisite = { focus = tariffs_through_rooftop }
+		cost = 10
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 1.0
+				uses = 2
+				category = industry
+			}
+		}
+	}
+	
+	focus = {
+		id = new_national_currency
+		icon = GFX_focus_fra_devalue_the_franc
+		mutually_exclusive = { focus = adopt_the_kopenhagen_mark }
+		x = 1
+		y = 1
+		relative_position_id = tariffs_through_rooftop
+		prerequisite = { focus = tariffs_through_rooftop }
+		cost = 10
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 1.0
+				uses = 2
+				category = industry
+			}
+		}
+	}
+	
+	focus = {
+		id = self_reliance
+		icon = GFX_focus_generic_stockpile_fuel
+		x = 2
+		y = 1
+		relative_position_id = limited_economic_cooperation
+		prerequisite = { focus = limited_economic_cooperation focus = prioritize_the_interior focus = free_trade }
+		cost = 10
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 1.0
+				uses = 2
+				category = industry
+			}
+		}
+	}
+	
+	focus = {
+		id = interventionism
+		icon = GFX_focus_DEN_heavy_regulations
+		x = 0
+		y = 1
+		relative_position_id = self_reliance
+		prerequisite = { focus = self_reliance }
+		cost = 10
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 1.0
+				uses = 2
+				category = industry
+			}
+		}
+	}
+	
+	focus = {
+		id = state_backed_monopolies
+		icon = GFX_goal_generic_dangerous_deal
+		x = 0
+		y = 1
+		relative_position_id = interventionism
+		prerequisite = { focus = interventionism }
+		cost = 10
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 1.0
+				uses = 2
+				category = industry
+			}
+		}
+	}
+	
+	
+	focus = {
+		id = steel_extraction
+		icon = GFX_focus_generic_steel
+		x = -2
+		y = 1
+		relative_position_id = state_backed_monopolies
+		prerequisite = { focus = state_backed_monopolies }
+		cost = 10
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 1.0
+				uses = 2
+				category = industry
+			}
+		}
+	}
+	
+	focus = {
+		id = merging_heavy_industry
+		icon = GFX_focus_generic_reorient_production
+		x = 0
+		y = 1
+		relative_position_id = state_backed_monopolies
+		prerequisite = { focus = state_backed_monopolies }
+		cost = 10
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 1.0
+				uses = 2
+				category = industry
+			}
+		}
+	}
+	
+	focus = {
+		id = redirect_air_production
+		icon = GFX_goal_generic_air_production
+		x = 2
+		y = 1
+		relative_position_id = state_backed_monopolies
+		prerequisite = { focus = state_backed_monopolies }
+		cost = 10
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 1.0
+				uses = 2
+				category = industry
+			}
+		}
+	}
+	
+	focus = {
+		id = free_trade
+		icon = GFX_goal_generic_air_production
+		mutually_exclusive = { focus = limited_economic_cooperation }
+		mutually_exclusive = { focus = prioritize_the_interior }
+		x = 12
+		y = 1
+		relative_position_id = new_economic_reality
+		prerequisite = { focus = new_economic_reality }
+		cost = 10
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 1.0
+				uses = 2
+				category = industry
+			}
+		}
+	}
+	
+	focus = {
+		id = laissez_faire
+		icon = GFX_goal_generic_air_production
+		x = -3
+		y = 1
+		relative_position_id = free_trade
+		prerequisite = { focus = limited_economic_cooperation focus = free_trade }
+		cost = 10
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 1.0
+				uses = 2
+				category = industry
+			}
+		}
+	}
+	
+	focus = {
+		id = open_the_markets
+		icon = GFX_goal_generic_air_production
+		x = 0
+		y = 1
+		relative_position_id = laissez_faire
+		prerequisite = { focus = laissez_faire }
+		cost = 10
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 1.0
+				uses = 2
+				category = industry
+			}
+		}
+	}
+	
+	focus = {
+		id = benefits_of_competition
+		icon = GFX_goal_generic_air_production
+		x = 0
+		y = 1
+		relative_position_id = open_the_markets
+		prerequisite = { focus = open_the_markets }
+		cost = 10
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 1.0
+				uses = 2
+				category = industry
+			}
+		}
+	}
+	
+	focus = {
+		id = invite_foreign_investors
+		icon = GFX_goal_generic_air_production
+		x = 3
+		y = 1
+		relative_position_id = free_trade
+		prerequisite = { focus = free_trade }
+		cost = 10
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 1.0
+				uses = 2
+				category = industry
+			}
+		}
+	}
+	
+	focus = {
+		id = corporatism
+		icon = GFX_goal_generic_air_production
+		x = 0
+		y = 1
+		relative_position_id = invite_foreign_investors
+		prerequisite = { focus = invite_foreign_investors }
+		cost = 10
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 1.0
+				uses = 2
+				category = industry
+			}
+		}
+	}
+	
+	focus = {
+		id = damn_the_consequences
+		icon = GFX_goal_generic_air_production
+		mutually_exclusive = { focus = thin_red_line }
+		x = -2
+		y = 1
+		relative_position_id = corporatism
+		prerequisite = { focus = corporatism }
+		cost = 10
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 1.0
+				uses = 2
+				category = industry
+			}
+		}
+	}
+	
+	
+	focus = {
+		id = give_up_control_over_small_arms
+		icon = GFX_goal_generic_air_production
+		x = -2
+		y = 1
+		relative_position_id = damn_the_consequences
+		prerequisite = { focus = damn_the_consequences }
+		cost = 10
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 1.0
+				uses = 2
+				category = industry
+			}
+		}
+	}
+	
+	focus = {
+		id = give_up_control_over_heavy_equipment
+		icon = GFX_goal_generic_air_production
+		x = 0
+		y = 1
+		relative_position_id = damn_the_consequences
+		prerequisite = { focus = damn_the_consequences }
+		cost = 10
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 1.0
+				uses = 2
+				category = industry
+			}
+		}
+	}
+	
+	focus = {
+		id = give_up_control_over_logistics
+		icon = GFX_goal_generic_air_production
+		x = 2
+		y = 1
+		relative_position_id = damn_the_consequences
+		prerequisite = { focus = damn_the_consequences }
+		cost = 10
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 1.0
+				uses = 2
+				category = industry
+			}
+		}
+	}
+	
+	focus = {
+		id = thin_red_line
+		icon = GFX_goal_generic_air_production
+		mutually_exclusive = { focus = damn_the_consequences }
+		x = 3
+		y = 1
+		relative_position_id = corporatism
+		prerequisite = { focus = corporatism }
+		cost = 10
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 1.0
+				uses = 2
+				category = industry
+			}
+		}
+	}
+	
+	focus = {
+		id = international_economic_forums
+		icon = GFX_goal_generic_air_production
+		x = -1
+		y = 1
+		relative_position_id = thin_red_line
+		prerequisite = { focus = thin_red_line }
+		cost = 10
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 1.0
+				uses = 2
+				category = industry
+			}
+		}
+	}
+	
+	focus = {
+		id = from_abroad_comes_our_wealth
+		icon = GFX_goal_generic_air_production
+		x = 0
+		y = 1
+		relative_position_id = international_economic_forums
+		prerequisite = { focus = international_economic_forums }
+		cost = 10
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 1.0
+				uses = 2
+				category = industry
+			}
+		}
+	}
+	
+	focus = {
+		id = foundation_of_our_economy
+		icon = GFX_goal_generic_air_production
+		x = 1
+		y = 1
+		relative_position_id = thin_red_line
+		prerequisite = { focus = thin_red_line }
+		cost = 10
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 1.0
+				uses = 2
+				category = industry
+			}
+		}
+	}
+	
+	focus = {
+		id = create_semi_state_corporations
+		icon = GFX_goal_generic_air_production
+		x = 0
+		y = 1
+		relative_position_id = foundation_of_our_economy
+		prerequisite = { focus = foundation_of_our_economy }
+		cost = 10
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 1.0
+				uses = 2
+				category = industry
+			}
+		}
+	}
+###################################################
+	focus = {
+		id = placeholder
+		icon = GFX_goal_generic_forceful_treaty
+		x = 100
+		y = 1
+		cost = 10
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 1.0
+				uses = 2
+				category = industry
+			}
+		}
+	}
+####################################################
+
