@@ -5,4 +5,4 @@ tags={
 	"National Focuses"
 }
 name="pizza_social_experiment"
-supported_version="1.14.2"
+supported_version="1.14.3"
