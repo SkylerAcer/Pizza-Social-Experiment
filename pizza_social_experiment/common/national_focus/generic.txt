@@ -60,13 +60,16 @@ focus_tree = {
 		available_if_capitulated = yes
 
 		completion_reward = {
-			add_tech_bonus = {
-				name = industrial_bonus
-				bonus = 1.0
-				uses = 2
-				category = industry
+					limit = {
+						has_idea = export_focus
+					}
+					swap_ideas = {
+						remove_idea = export_focus
+						add_idea = limited_exports
+					}
+					add_political_power = 25
 			}
-		}
+
 	}
 	# mutually_exclusive = { focus = liberty_ethos}
 	focus = {
@@ -181,7 +184,7 @@ focus_tree = {
 	
 	focus = {
 		id = university_expansion
-		icon = GFX_focus_research
+		icon = GFX_focus_research2
 		x = 0
 		y = 1
 		relative_position_id = achieving_higher_yield
@@ -441,12 +444,7 @@ focus_tree = {
 		available_if_capitulated = yes
 
 		completion_reward = {
-			add_tech_bonus = {
-				name = industrial_bonus
-				bonus = 1.0
-				uses = 2
-				category = industry
-			}
+			add_political_power = 25
 		}
 	}
 	
@@ -675,7 +673,7 @@ focus_tree = {
 	
 	focus = {
 		id = free_trade
-		icon = GFX_goal_generic_air_production
+		icon = GFX_goal_generic_positive_trade_relations
 		mutually_exclusive = { focus = limited_economic_cooperation }
 		mutually_exclusive = { focus = prioritize_the_interior }
 		x = 12
@@ -688,18 +686,19 @@ focus_tree = {
 		available_if_capitulated = yes
 
 		completion_reward = {
-			add_tech_bonus = {
-				name = industrial_bonus
-				bonus = 1.0
-				uses = 2
-				category = industry
-			}
+					limit = {
+						has_idea = export_focus
+					}
+					swap_ideas = {
+						remove_idea = export_focus
+						add_idea = free_trade
+					}
 		}
 	}
 	
 	focus = {
 		id = laissez_faire
-		icon = GFX_goal_generic_air_production
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
 		x = -3
 		y = 1
 		relative_position_id = free_trade
@@ -721,7 +720,7 @@ focus_tree = {
 	
 	focus = {
 		id = open_the_markets
-		icon = GFX_goal_generic_air_production
+		icon = GFX_focus_ETH_adopt_the_lira
 		x = 0
 		y = 1
 		relative_position_id = laissez_faire
@@ -743,7 +742,7 @@ focus_tree = {
 	
 	focus = {
 		id = benefits_of_competition
-		icon = GFX_goal_generic_air_production
+		icon = GFX_focus_generic_modernize_industry
 		x = 0
 		y = 1
 		relative_position_id = open_the_markets
@@ -765,7 +764,7 @@ focus_tree = {
 	
 	focus = {
 		id = invite_foreign_investors
-		icon = GFX_goal_generic_air_production
+		icon = GFX_focus_generic_concessions
 		x = 3
 		y = 1
 		relative_position_id = free_trade
@@ -787,7 +786,7 @@ focus_tree = {
 	
 	focus = {
 		id = corporatism
-		icon = GFX_goal_generic_air_production
+		icon = GFX_goal_generic_neutrality_focus
 		x = 0
 		y = 1
 		relative_position_id = invite_foreign_investors
@@ -809,7 +808,7 @@ focus_tree = {
 	
 	focus = {
 		id = damn_the_consequences
-		icon = GFX_goal_generic_air_production
+		icon = GFX_goal_generic_dangerous_deal
 		mutually_exclusive = { focus = thin_red_line }
 		x = -2
 		y = 1
@@ -833,7 +832,7 @@ focus_tree = {
 	
 	focus = {
 		id = give_up_control_over_small_arms
-		icon = GFX_goal_generic_air_production
+		icon = GFX_goal_generic_small_arms
 		x = -2
 		y = 1
 		relative_position_id = damn_the_consequences
@@ -855,7 +854,7 @@ focus_tree = {
 	
 	focus = {
 		id = give_up_control_over_heavy_equipment
-		icon = GFX_goal_generic_air_production
+		icon = GFX_focus_generic_army_tanks2
 		x = 0
 		y = 1
 		relative_position_id = damn_the_consequences
@@ -877,7 +876,7 @@ focus_tree = {
 	
 	focus = {
 		id = give_up_control_over_logistics
-		icon = GFX_goal_generic_air_production
+		icon = GFX_focus_generic_truck
 		x = 2
 		y = 1
 		relative_position_id = damn_the_consequences
@@ -899,7 +898,7 @@ focus_tree = {
 	
 	focus = {
 		id = thin_red_line
-		icon = GFX_goal_generic_air_production
+		icon = GFX_goal_generic_national_unity
 		mutually_exclusive = { focus = damn_the_consequences }
 		x = 3
 		y = 1
@@ -922,7 +921,7 @@ focus_tree = {
 	
 	focus = {
 		id = international_economic_forums
-		icon = GFX_goal_generic_air_production
+		icon = GFX_goal_generic_intelligence_exchange
 		x = -1
 		y = 1
 		relative_position_id = thin_red_line
@@ -944,7 +943,7 @@ focus_tree = {
 	
 	focus = {
 		id = from_abroad_comes_our_wealth
-		icon = GFX_goal_generic_air_production
+		icon = GFX_focus_mex_privatisation
 		x = 0
 		y = 1
 		relative_position_id = international_economic_forums
@@ -966,7 +965,7 @@ focus_tree = {
 	
 	focus = {
 		id = foundation_of_our_economy
-		icon = GFX_goal_generic_air_production
+		icon = GFX_focus_generic_the_giant_wakes
 		x = 1
 		y = 1
 		relative_position_id = thin_red_line
@@ -988,7 +987,7 @@ focus_tree = {
 	
 	focus = {
 		id = create_semi_state_corporations
-		icon = GFX_goal_generic_air_production
+		icon = GFX_goal_generic_construct_civ_factory
 		x = 0
 		y = 1
 		relative_position_id = foundation_of_our_economy
