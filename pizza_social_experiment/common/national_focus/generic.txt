@@ -75,7 +75,7 @@ focus_tree = {
 	focus = {
 		id = long_term_economic_planning
 		icon = GFX_goal_generic_consumer_goods
-		x = -4
+		x = -3
 		y = 1
 		relative_position_id = prioritize_the_interior
 		prerequisite = { focus = prioritize_the_interior }
@@ -85,12 +85,7 @@ focus_tree = {
 		available_if_capitulated = yes
 
 		completion_reward = {
-			add_tech_bonus = {
-				name = industrial_bonus
-				bonus = 1.0
-				uses = 2
-				category = industry
-			}
+			add_ideas = { economic_planning1 }
 		}
 	}
 	
@@ -107,12 +102,15 @@ focus_tree = {
 		available_if_capitulated = yes
 
 		completion_reward = {
-			add_tech_bonus = {
-				name = industrial_bonus
-				bonus = 1.0
-				uses = 2
-				category = industry
-			}
+				if = {
+					limit = {
+						has_idea = economic_planning1
+					}
+					swap_ideas = {
+						remove_idea = economic_planning1
+						add_idea = economic_planning2
+					}
+				}
 		}
 	}
 	
@@ -184,7 +182,7 @@ focus_tree = {
 	
 	focus = {
 		id = university_expansion
-		icon = GFX_focus_research2
+		icon = GFX_focus_research
 		x = 0
 		y = 1
 		relative_position_id = achieving_higher_yield
@@ -252,10 +250,10 @@ focus_tree = {
 	focus = {
 		id = rapid_industrialization
 		icon = GFX_goal_generic_forceful_treaty
-		x = 4
+		x = 3
 		y = 1
 		relative_position_id = prioritize_the_interior
-		prerequisite = { focus = limited_economic_cooperation focus = prioritize_the_interior }
+		prerequisite = { focus = prioritize_the_interior }
 		cost = 10
 		search_filters = {  FOCUS_FILTER_RESEARCH }
 		
@@ -434,7 +432,7 @@ focus_tree = {
 		icon = GFX_goal_generic_trade
 		mutually_exclusive = { focus = prioritize_the_interior }
 		mutually_exclusive = { focus = free_trade }
-		x = 2
+		x = 0
 		y = 1
 		relative_position_id = new_economic_reality
 		prerequisite = { focus = new_economic_reality }
@@ -454,7 +452,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = limited_economic_cooperation
-		prerequisite = { focus = limited_economic_cooperation focus = prioritize_the_interior focus = free_trade }
+		prerequisite = { focus = limited_economic_cooperation focus = prioritize_the_interior }
 		cost = 10
 		search_filters = {  FOCUS_FILTER_RESEARCH }
 		
@@ -544,7 +542,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = limited_economic_cooperation
-		prerequisite = { focus = limited_economic_cooperation focus = prioritize_the_interior focus = free_trade }
+		prerequisite = { focus = limited_economic_cooperation focus = free_trade }
 		cost = 10
 		search_filters = {  FOCUS_FILTER_RESEARCH }
 		
@@ -651,7 +649,7 @@ focus_tree = {
 	
 	focus = {
 		id = redirect_air_production
-		icon = GFX_goal_generic_air_production
+		icon = GFX_focus_research
 		x = 2
 		y = 1
 		relative_position_id = state_backed_monopolies
@@ -676,7 +674,7 @@ focus_tree = {
 		icon = GFX_goal_generic_positive_trade_relations
 		mutually_exclusive = { focus = limited_economic_cooperation }
 		mutually_exclusive = { focus = prioritize_the_interior }
-		x = 12
+		x = 7
 		y = 1
 		relative_position_id = new_economic_reality
 		prerequisite = { focus = new_economic_reality }
@@ -699,7 +697,7 @@ focus_tree = {
 	focus = {
 		id = laissez_faire
 		icon = GFX_focus_eng_concessions_to_the_trade_unions
-		x = -3
+		x = -2
 		y = 1
 		relative_position_id = free_trade
 		prerequisite = { focus = limited_economic_cooperation focus = free_trade }
